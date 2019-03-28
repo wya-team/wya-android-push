@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.weiyian.push.push2"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="26" />
+
+    <application>
+
+        <!-- HWPush start -->
+        <receiver
+            android:name="com.weiyian.push.push.hwpush.HWPushReceiver"
+            android:permission="dollar_openBracket_APPLICATION_ID_closeBracket.permission.PROCESS_PUSH_MSG" >
+            <intent-filter>
+
+                <!-- 必须,用于接收token -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- 必须，用于接收消息 -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 -->
+                <action android:name="com.huawei.android.push.intent.CLICK" />
+                <!-- 可选，查看push通道是否连接，不查看则不需要 -->
+                <action android:name="com.huawei.intent.action.PUSH_STATE" />
+            </intent-filter>
+        </receiver>
+        <!-- HWPush end -->
+        <!-- ============================================================================================================================================================================= -->
+
+
+        <!-- ============================================================================================================================================================================= -->
+        <!-- MiPush end -->
+        <receiver
+            android:name="com.weiyian.push.push.mipush.MiPushMessageReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        <!-- MiPush end -->
+        <!-- =============================================================================================================================================================================== -->
+
+    </application>
+
+</manifest>
