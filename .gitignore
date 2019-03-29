@@ -9,3 +9,7 @@
 /build
 /captures
 .externalNativeBuild
+
+/hwpush
+/mipush
+/push
