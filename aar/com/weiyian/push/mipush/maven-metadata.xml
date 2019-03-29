@@ -7,6 +7,10 @@
     <versions>
       <version>3.5.1</version>
     </versions>
+<<<<<<< HEAD
     <lastUpdated>20190329063628</lastUpdated>
+=======
+    <lastUpdated>20190328115021</lastUpdated>
+>>>>>>> origin/master
   </versioning>
 </metadata>
